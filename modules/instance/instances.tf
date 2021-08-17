@@ -1,5 +1,6 @@
 resource "google_compute_instance" "vm-demo2" {
   count        = var.instances
+  name = "tdc-vm-${count.index}"
   machine_type = "f1-micro"
 
   boot_disk {
