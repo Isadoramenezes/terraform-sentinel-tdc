@@ -1,4 +1,5 @@
 resource "google_compute_instance" "vm-demo2" {
+  count = var.instances
   name         = "tdc-demo-2"
   machine_type = "f1-micro"
 
