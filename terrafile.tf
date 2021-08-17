@@ -1,4 +1,4 @@
 module "instances" {
-  source = "./modules/instance"
+  source    = "./modules/instance"
   instances = 2
 }
