@@ -1,4 +1,4 @@
-/* data "template_file" "nginx" {
+data "template_file" "nginx" {
   template = "${file("./templates/nginx.tpl")}"
 
   vars = {
@@ -6,13 +6,15 @@
   }
 }
 
+
 resource "google_compute_instance" "vm-demo1" {
   name         = "tdc-demo-1"
   machine_type = "f1-micro"
+  tags         = ["http-server"]
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "ubuntu-1604-xenial-v20210429"
     }
   }
 
@@ -24,4 +26,3 @@ resource "google_compute_instance" "vm-demo1" {
   }
   metadata_startup_script = data.template_file.nginx.rendered
 }
- */
