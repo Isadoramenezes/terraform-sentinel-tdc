@@ -1,4 +1,4 @@
-/* data "template_file" "nginx" {
+data "template_file" "nginx" {
   template = "${file("./templates/nginx.tpl")}"
 
   vars = {
@@ -26,4 +26,3 @@ resource "google_compute_instance" "vm-demo1" {
   }
   metadata_startup_script = data.template_file.nginx.rendered
 }
- */
