@@ -1,3 +1,11 @@
+data "template_file" "nginx" {
+  template = "${file("./templates/install_nginx.tpl")}"
+
+  vars = {
+    ufw_allow_nginx = "Nginx HTTP"
+  }
+}
+
 resource "google_compute_instance" "vm-demo1" {
   name         = "tdc-demo-1"
   machine_type = "f1-micro"
@@ -14,4 +22,5 @@ resource "google_compute_instance" "vm-demo1" {
     access_config {
     }
   }
+  metadata_startup_script = data.template_file.nginx.rendered
 }
