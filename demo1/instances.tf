@@ -1,20 +1,20 @@
 data "template_file" "nginx" {
-  template = "${file("./templates/install_nginx.tpl")}"
+  template = "${file("./templates/nginx.tpl")}"
 
   vars = {
     ufw_allow_nginx = "Nginx HTTP"
   }
 }
 
-resource "google_compute_instance" "tdc-vm-demo1" {
+
+resource "google_compute_instance" "vm-demo1" {
   name         = "tdc-demo-1"
   machine_type = "f1-micro"
   tags         = ["http-server"]
-  labels       = var.labels
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "ubuntu-1604-xenial-v20210429"
     }
   }
 
