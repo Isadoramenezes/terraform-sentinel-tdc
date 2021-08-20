@@ -9,6 +9,6 @@ systemctl restart nginx
 
 echo "*****   Installation Complteted!!   *****"
 
-echo "Welcome TDC - Transformation!!!" > /var/www/html
+echo "Welcome TDC - Transformation!!!" > /var/www/html/index.html
 
 echo "*****   Startup script completes!!    *****"
