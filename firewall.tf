@@ -13,3 +13,16 @@ resource "google_compute_firewall" "default" {
 
   source_tags = ["http-server"]
 }
+
+resource "google_compute_firewall" "ssh" {
+  name    = "firewall-ssh"
+  network = google_compute_network.vpc_demo_1.name
+
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+
+  target_tags   = ["http-server"]
+  source_ranges = ["0.0.0.0/0"]
+}
