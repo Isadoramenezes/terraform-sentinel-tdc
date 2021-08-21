@@ -1,10 +1,7 @@
-data "google_compute_network""vpc-demo-2" {
-  name = "vpc-demo-2"
-}
-
 resource "google_compute_firewall" "default" {
   name    = var.name_frw
-  network = data.google_compute_network.vpc-demo-2.name
+  #network = "vpc-demo-2"
+  network = "vpc-demo-2"
 
   allow {
     protocol = "tcp"

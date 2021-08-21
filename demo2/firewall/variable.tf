@@ -12,3 +12,6 @@ variable "source_ranges" {
 variable "allow_ports" {
 
 }
+variable "network" {
+  
+}

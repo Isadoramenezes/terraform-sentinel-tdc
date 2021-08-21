@@ -27,3 +27,7 @@ variable "allow_ports" {
   type    = list(any)
   default = ["22", "80", "8080", "1000-2000"]
 }
+
+variable "network" {
+  default = "vpc-demo-2"
+}
