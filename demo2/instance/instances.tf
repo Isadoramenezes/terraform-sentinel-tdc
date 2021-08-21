@@ -18,7 +18,7 @@ resource "google_compute_instance" "vm-demo2" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-9"
+      image = "ubuntu-1604-xenial-v20210429"
     }
   }
 
