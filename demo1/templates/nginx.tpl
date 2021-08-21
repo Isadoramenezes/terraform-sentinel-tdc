@@ -22,7 +22,7 @@ font-family: Tahoma, Verdana, Arial, sans-serif; }
 </head>
 <body>
 <h1>Welcome to TDC-Transformation!</h1>
-<p>Este é um exemplo de infraestrutura simples com o Terraform.</p>
+<p>Este eh um exemplo de infraestrutura simples com o Terraform.</p>
 
 </body>
 </html>
