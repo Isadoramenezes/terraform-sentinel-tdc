@@ -1,3 +1,16 @@
+data "template_file" "nginx" {
+  template = "${file("./templates/nginx.tpl")}"
+
+  vars = {
+    ufw_allow_nginx = var.ufw
+  }
+}
+
+
+data "google_compute_network""vpc-demo-2" {
+  name = "vpc-demo-2"
+}
+
 resource "google_compute_instance" "vm-demo2" {
   count        = var.instances
   name         = "tdc-vm-${count.index}"
@@ -11,8 +24,9 @@ resource "google_compute_instance" "vm-demo2" {
 
   network_interface {
     # A default network is created for all GCP projects
-    network = google_compute_network.vpc_demo_2.self_link
+    network = data.google_compute_network.vpc-demo-2.name
     access_config {
     }
   }
+  metadata_startup_script =  data.template_file.nginx.rendered
 }
