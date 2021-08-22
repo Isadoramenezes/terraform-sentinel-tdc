@@ -6,7 +6,6 @@ data "template_file" "nginx" {
   }
 }
 
-
 data "google_compute_network""vpc-demo-2" {
   name = "vpc-demo-2"
 }
