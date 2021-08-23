@@ -20,3 +20,6 @@ module "firewall" {
     google_compute_network.vpc_demo_2
   ]
 }
+output "ip" {
+  value = module.instances.ip
+}
