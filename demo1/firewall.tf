@@ -12,6 +12,7 @@ resource "google_compute_firewall" "default" {
   }
 
   source_tags = ["http-server"]
+  source_ranges = ["0.0.0.0/0"]
 
   depends_on = [
     google_compute_network.vpc_demo_1
@@ -29,6 +30,7 @@ resource "google_compute_firewall" "ssh" {
 
   target_tags   = ["http-server"]
   source_ranges = ["0.0.0.0/0"]
+  
     depends_on = [
     google_compute_network.vpc_demo_1
   ]
