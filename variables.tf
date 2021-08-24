@@ -33,5 +33,5 @@ variable "network" {
 }
 
 variable "machine_type" {
-  default = "e2-standard-16"
+  default = "e2-medium"
 }
