@@ -13,7 +13,7 @@ data "google_compute_network""vpc-demo-2" {
 resource "google_compute_instance" "vm-demo2" {
   count        = var.instances
   name         = "tdc-vm-${count.index}"
-  machine_type = "f1-micro"
+  machine_type = var.machine_type
   tags         = ["http-server"]
 
   boot_disk {

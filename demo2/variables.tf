@@ -31,3 +31,7 @@ variable "allow_ports" {
 variable "network" {
   default = "vpc-demo-2"
 }
+
+variable "machine_type" {
+  default = "f1-micro"
+}
