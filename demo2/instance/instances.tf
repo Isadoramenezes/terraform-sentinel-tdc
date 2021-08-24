@@ -17,7 +17,7 @@ resource "google_compute_instance" "vm-demo2" {
   tags         = ["http-server"]
   allow_stopping_for_update = true
   desired_status = "RUNNING"
-
+ 
   boot_disk {
     initialize_params {
       image = "ubuntu-1604-xenial-v20210429"
