@@ -17,7 +17,9 @@ resource "google_compute_instance" "vm-demo2" {
   tags         = ["http-server"]
   allow_stopping_for_update = true
   desired_status = "RUNNING"
-  labels = "http-server"
+  labels = {
+    http-server = "true"
+  }
 
   boot_disk {
     initialize_params {
