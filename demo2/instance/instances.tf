@@ -15,6 +15,7 @@ resource "google_compute_instance" "vm-demo2" {
   name         = "tdc-vm-${count.index}"
   machine_type = var.machine_type
   tags         = ["http-server"]
+  allow_stopping_for_update = true
 
   boot_disk {
     initialize_params {
