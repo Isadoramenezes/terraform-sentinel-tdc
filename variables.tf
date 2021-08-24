@@ -33,5 +33,5 @@ variable "network" {
 }
 
 variable "machine_type" {
-  default = "f1-micro"
+  default = "e2-medium"
 }
