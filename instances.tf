@@ -7,8 +7,8 @@ data "template_file" "nginx" {
 }
 
 
-resource "google_compute_instance" "vm-demo1" {
-  name         = "tdc-demo-1"
+resource "google_compute_instance" "tdc-demo-1" {
+  name         = "tdc-demo-1-vm"
   machine_type = "f1-micro"
   tags         = ["http-server"]
 
