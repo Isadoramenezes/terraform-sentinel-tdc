@@ -16,6 +16,7 @@ resource "google_compute_instance" "vm-demo2" {
   machine_type = var.machine_type
   tags         = ["http-server"]
   allow_stopping_for_update = true
+  desired_status = "RUNNING"
 
   boot_disk {
     initialize_params {
